@@ -8,38 +8,607 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Portafolio</title>
   </head>
   <body>
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://kit.fontawesome.com/a009d414bf.js" crossorigin="anonymous"></script>
+      <style>
+        html{line-height:1.15;-webkit-text-size-adjust:100%;}body{margin:0;}main{display:block;}h1{font-size:2em;margin:0.67em 0;}hr{box-sizing:content-box;height:0;overflow:visible;}pre{font-family:monospace,monospace;font-size:1em;}a{background-color:transparent;}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted;}b,strong{font-weight:bolder;}code,kbd,samp{font-family:monospace,monospace;font-size:1em;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sub{bottom:-0.25em;}sup{top:-0.5em;}img{border-style:none;}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0;}button,input{overflow:visible;}button,select{text-transform:none;}button,[type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0;}button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText;}fieldset{padding:0.35em 0.75em 0.625em;}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal;}progress{vertical-align:baseline;}textarea{overflow:auto;}[type="checkbox"],[type="radio"]{box-sizing:border-box;padding:0;}[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto;}[type="search"]{-webkit-appearance:textfield;outline-offset:-2px;}[type="search"]::-webkit-search-decoration{-webkit-appearance:none;}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit;}details{display:block;}summary{display:list-item;}template{display:none;}[hidden]{display:none;}
+
+* {
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --color-bar:rgb(32, 32, 32);
+    --texto-bar:grey;
+    --link-bar:white;
+    --titulo-bar:white;
+
+    --color-primario:rgb(206, 206, 206);
+    --color-secundario: rgb(223, 223, 223);
+
+    --texto-oscuro:rgb(12, 12, 12);
+    --texto-claro:whitesmoke;
+    --texto-medio:rgb(32, 32, 32);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.inicio,
+.portafolio,
+.mi-persona,
+.contacto,
+.footer  {
+    padding: 40px;
+}
+
+.navbar {
+    background-color: var(--color-bar);
+    position:sticky;
+    top:0;
+    height: 100vh;
+}
+
+.navbar__logo {
+    font-size: 40px;
+    color: var(--titulo-bar);
+    position: relative;
+    top:42px;
+    left: 30px;
+}
+
+.navbar__title {
+    color: var(--titulo-bar);
+    font-size: 25px;
+    text-align: right;
+    margin: 0;
+    padding-right: 30px;
+}
+
+.navbar__subtitle {
+    color: var(--texto-bar);
+    font-size: 15px;
+    text-align: right;
+    margin: 0;
+    padding-right: 30px;
+}
+
+.navbar__list {
+    margin-top: 50px;
+    list-style: none;
+    padding: 0;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.500);
+}
+
+.navbar__item {
+    height: 80px;
+    font-size: 18px;
+}
+
+.navbar__link {
+    color: var(--texto-bar);
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.navbar__link:hover {
+    background-color: rgb(20, 20, 20);
+    color: var(--link-bar);
+}
+
+.icons {
+    margin-top: -15px;
+    padding: 25px 0;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.500);
+    text-align: center;
+}
+
+.icons__link {
+    text-decoration: none;
+}
+
+.icons__icons {
+    margin: 5px;
+    font-size: 25px;
+    color: var(--texto-bar);
+}
+
+.icons__icons:hover {
+    color: var(--link-bar);
+}
+
+.puntos {
+    color: var(--texto-bar);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    font-size: 33px;
+}
+
+@media screen and (max-width:1170px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        height: 115px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 60px 50px;
+        box-shadow: 0 0 8px black;
+        z-index: 100;
+    }
+
+    .navbar__list {
+        grid-column: 1/3;
+        grid-row: 1;
+    }
+
+    .navbar__title,
+    .navbar__subtitle {
+        text-align: left;
+        padding: 0 25px;
+        margin-left: 15px;
+        color: var(--texto-bar);
+    }
+
+    .navbar__logo {
+        grid-column: 1/2;
+        grid-row: 2;
+        font-size: 30px;
+        left:180px;
+        top: 9px;
+        width: 30px;
+        color: var(--texto-bar);
+    }
+
+    .navbar__title {
+        grid-column: 1/2;
+        grid-row: 2;
+        margin-left: 13px;
+        font-size: 20px;
+        padding-top: 4px;
+        border-radius: 0 0 50px 50px;
+        position:relative;
+        bottom: 30px;
+    }
+
+    .navbar__subtitle {
+        grid-column: 1/2;
+        grid-row: 2;
+        margin-top: 26px;
+        font-size: 12px;
+        position:relative;
+        bottom: 57px;
+        left: -0.5px;
+    }
+
+    .navbar__list {
+        margin: 0px;
+        list-style: none;
+        padding: 0;
+        width: 100%;
+        box-shadow: 0 0 0;
+        display: flex;
+        align-items: center;
+    }
+    
+    .separa {
+        padding-right: 5px;
+    }
+
+    .navbar__item {
+        font-size: 12px;
+        height: 80%;
+        width: 100%;
+    }
+    
+    .navbar__link {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 0 10px;
+        box-shadow: 0 0 1px 1px rgb(116, 116, 116);
+    }
+
+    .icons {
+        border-radius: 0 0 50px 50px;
+        margin: 7px 30px 5px 0;
+        text-align: right;
+        box-shadow: 0 0 0;
+
+        margin-top: -15px;
+        padding: 25px 0;
+    
+    }
+    
+    .puntos {
+        font-size: 0px;
+    }
+
+    .inicio,
+    .portafolio,
+    .mi-persona,
+    .contacto,
+    .footer {
+        width: 100%;
+    }
+}
+
+.inicio {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThfPyQhPZztcaCzwCVhhmXSpGSfpf7LiMKmaQmRZrNJBa9ZRyr6d1xPDbaSFiaE9IlKNQ&usqp=CAU);
+    background-size: cover;
+    min-height:100vh;
+    color: var(--texto-claro);
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.inicio__title {
+    margin: 0;
+    text-shadow: 0 0 5px black;
+}
+
+.inicio__subtitle {
+    margin-top: 0;
+    margin-bottom: 50px;
+    text-shadow: 0 0 5px black;
+}
+
+.inicio__button {
+    background-color: whitesmoke;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--texto-oscuro);
+    box-shadow: 0 0 5px black;
+    text-shadow: 0 0 1px black;
+}
+
+.inicio__button:hover {
+    background-color: var(--color-bar);
+    color: var(--texto-claro);
+}
+
+.inicio__arrow {
+    margin-top: 3px;
+    text-shadow: 0 0 5px black;
+}
+
+.portafolio__title,
+.mi-persona__title,
+.contacto__title {
+    font-size: 35px;
+    color: var(--texto-oscuro);
+    text-align: center;
+    margin-top: 0px;
+    text-shadow: 0 0 2px black;
+}
+
+.portafolio {
+    background-color: var(--color-secundario);
+}
+
+.flex-zone {
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(400px, 1fr));
+    justify-items: center;
+    justify-content: center;
+    grid-gap: 30px;
+    margin-bottom: 40px;
+}
+
+.portafolio__subtitle {
+    color: var(--texto-medio); 
+    font-weight: 500;   
+}
+
+.container-img {
+    text-align: center;
+    background-color: rgb(241, 241, 241);
+    width: 420px;
+    height: 305px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.800);
+    text-shadow: 0 0 1px black;
+    overflow: hidden;
+    border-radius: 0 0 15px 15px;
+}
+
+.portafolio__img {
+    border: 2px solid rgb(255, 255, 255, 500);
+    width: 100%;
+    transition-duration: 0.5s;
+}
+
+.portafolio__img:hover {
+    transform:translateY(14px);
+    box-shadow: 0 0 10px 5px black;
+    transition-duration: 0.5s;
+}
+
+.mi-persona {
+    background-color: var(--color-primario);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+   }
+
+   .mi-persona__title {
+       margin-bottom: 50px;
+   }
+
+
+.mi-persona__img__container {
+    background-image: url(https://scontent-bog1-1.xx.fbcdn.net/v/t1.6435-9/132565375_427545651712922_7523756752646737716_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=r3vcYlmpHH4AX_l_byK&_nc_ht=scontent-bog1-1.xx&oh=bd739136f63eb79527f4180c6469f68c&oe=609A46F3);
+    background-size:cover;
+    background-position: center;
+    width: 80%;
+    height: 500px;
+    overflow: hidden;
+}
+
+@media screen and (max-width:900px) {
+    .mi-persona__img__container {
+        width: 90%;
+    }
+
+    .mi-persona__text {
+        min-width: 400px;
+    }
+}
+
+.mi-persona__text {
+    color: rgba(44, 44, 44, 0.658);
+    width: 40vw;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.500);
+    margin-top: 50px;
+}
+
+.contacto {
+    background-color: var(--color-secundario);
+    min-height: 80vh;
+    text-align: center;
+}
+
+.contacto__text {
+    color: var(--texto-bar);
+    margin: 40px auto;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.500);
+    width: 50vw;
+    text-align: justify;
+}
+
+.contacto__name {
+    border-radius: 5px;
+    padding: 15px;
+    border: 1px solid rgba(128, 128, 128, 0.500);
+    width: 25vw;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+.contacto__email {
+    border-radius: 5px;
+    padding: 15px;
+    border: 1px solid rgba(128, 128, 128, 0.500);
+    width: 25vw;
+    margin-bottom: 10px;
+}
+
+.contacto__mensaje {
+    border-radius: 5px;
+    padding: 15px;
+    border: 1px solid rgba(128, 128, 128, 0.500);
+    width: 50.7vw;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.contacto__enviar {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.500);
+    color: var(--texto-claro);
+    background-color: rgba(65, 119, 102, 0.76);
+}
+
+.contacto__enviar:hover {
+    background-color: rgba(0, 0, 0, 0.800);
+}
+
+@media screen and (max-width:1020px) {
+
+    .contacto {
+        height: 610px;
+    }
+    
+    .contacto__text {
+        width: 400px;
+    }
+
+    .contacto__name {
+        width: 400px;
+        display: block;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+    
+    .contacto__email {
+        width: 400px;
+    }
+    
+    .contacto__mensaje {
+        width: 400px;
+    }
+    
+    .contacto__enviar {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid rgba(128, 128, 128, 0.500);
+        color: var(--texto-claro);
+        background-color: rgba(65, 119, 102, 0.76);
+    }
+    
+}
+
+.footer {
+    display: flex;
+
+    justify-content: flex-end;
+    align-items: center;
+    background-color: var(--color-primario);
+    min-height: 20vh;
+    text-align: right;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.500);
+}
+      </style>
+    </head>
+    <body>
+    
+      <nav class="navbar">
+        <div class="navbar__container">
+        <i class="navbar__logo fas fa-meteor"></i>
+        <h2 class="navbar__title">IvánCastillo</h2>
+        <h3 class="navbar__subtitle">Web Developer</h3>
+        </div>
+        <ul class="navbar__list">
+          <li class="navbar__item">
+            <a class="navbar__link" href="#inicio"><i class="separa fas fa-home"></i>Inicio</a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="#portafolio"><i class="separa fab fa-flipboard"></i>Portafolio</a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="#mi-persona"><i class="separa far fa-comment-alt"></i>Mi Persona</a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="#contacto"><i class="separa fas fa-id-badge"></i>Contacto</a>
+          </li>
+        </ul>
+    
+        <div class="icons">
+          <a class="icons__link" href="https://www.facebook.com/darianmorat" target="_blank">
+            <i class="icons__icons fab fa-facebook-square"></i>
+          </a>
+          <a class="icons__link" href="https://www.instagram.com/darianmorat" target="_blank">
+            <i class="icons__icons fab fa-instagram"></i>
+          </a>
+          <a class="icons__link" href="https://github.com/darianmorat" target="_blank">
+            <i class="icons__icons fab fa-github"></i>
+          </a>      
+          <a class="icons__link" href="https://www.linkedin.com/in/darianmorat" target="_blank">
+            <i class="icons__icons fab fa-linkedin"></i>
+          </a>
+          <a class="icons__link" href="https://www.twitter.com/darianmorat" target="_blank">
+            <i class="icons__icons fab fa-twitter-square"></i>
+          </a>
+        </div>
+            <p class="puntos">...</p>
+      </nav>
+    
+      <div class="container">
+        <section id="inicio" class="inicio">
+          <h1 class="inicio__title">Hola soy Desarrollador Web</h1>
+          <h2 class="inicio__subtitle">!Este es mi portafolio¡</h2>
+          <a class="inicio__button" href="#portafolio">Ver más</a>
+          <div class="inicio__arrow"><i class="fas fa-chevron-down"></i> </div>
+        </section>
+    
+        <section id="portafolio" class="portafolio">
+          <h2 class="portafolio__title">Portafolio</h2>
+          <div class="flex-zone">
+    
+            <div class="container-img">          
+                <a class="portafolio__link" href="https://cdpn.io/darianmorat/debug/NWddYJG/dXAqBanVNQLk" target="_blank">
+                  <img class="portafolio__img" src="https://external-preview.redd.it/PLar2TtNVPWb0KexqBrJohCeU_DCwoheRNlmWOkCkWY.jpg?auto=webp&s=13ac821f7aa90f934d592a2db675eb70c7c70c50" alt="Formulario Espacial">
+                </a>
+                <h3 class="portafolio__subtitle">Formulario Espacial</h3>
+            </div>    
+    
+            <div class="container-img">          
+              <a class="portafolio__link" href="https://cdpn.io/darianmorat/debug/OJWbBaa/vWARwGpjRXNk" target="_blank">
+                <img class="portafolio__img" src="https://depor.com/resizer/Zq-LkEV3u5PBqma0bMa1xioSz-E=/1200x675/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/FE56Z6QHMNF6TGJHWFT2NX45YQ.jpg" alt="Pagina SNK">
+              </a>
+              <h3 class="portafolio__subtitle">Pagina SNK</h3>
+            </div>
+              
+            <div class="container-img">        
+              <a class="portafolio__link" href="https://cdpn.io/darianmorat/debug/rNjYpKa/yokZEpDaOgxA" target="_blank">
+                <img class="portafolio__img" src="https://www.damos.co/fotosnoticias/mac_que_es_una_landing_page_o_pagina_de_aterrizaje_1544133467.png" alt="Producto Ventas">
+              </a>
+              <h3 class="portafolio__subtitle">Producto Ventas</h3>
+            </div>
+    
+            <div class="container-img">          
+              <a class="portafolio__link" href="https://cdpn.io/darianmorat/debug/qBRVYRb/dGrXWjezjnBM" target="_blank">
+                <img class="portafolio__img" src="https://wallpaperaccess.com/full/1555163.jpg" alt="Documentacion JS">
+              </a>
+              <h3 class="portafolio__subtitle">Documentacion JS</h3>
+            </div>
+    
+            <div class="container-img">         
+              <a class="portafolio__link" href="https://cdpn.io/darianmorat/debug/GRrxbdz/PBkNWRpeJYLM" target="_blank">
+                <img class="portafolio__img" src="https://i0.hdslb.com/bfs/article/c0fd7401e8f8a2da2e8e0274193a88eaea5637a0.png" alt="Tarjeta ZeroTwo">
+              </a>
+              <h3 class="portafolio__subtitle">Tarjeta ZeroTwo</h3>
+            </div>
+    
+            <div class="container-img">          
+              <a class="portafolio__link" href="https://cdpn.io/darianmorat/debug/qBRVYRb/dGrXWjezjnBM" target="_blank">
+                <img class="portafolio__img" src="https://s2.dmcdn.net/v/DFX2d1ViA3h1x2eyk/x1080" alt="#">
+              </a>
+              <h3 class="portafolio__subtitle">Proximamente</h3>
+            </div>
+          </div>  
+        </section>
+    
+        <section id="mi-persona" class="mi-persona">
+          <h2 class="mi-persona__title">Mi persona</h2>
+          <div class="mi-persona__img__container">
+          </div>
+          <p class="mi-persona__text">¡Hola! Mi nombre es Iván Castillo y soy desarrollador web con experiencia en construcción y diseño de sitios web. Me especializo en el uso de tecnologías web modernas como HTML, CSS, JavaScript, Django, .NET ASP y Angular para crear aplicaciones web dinámicas y responsivas.</p>
+        </section>
+    
+        <section id="contacto" class="contacto">
+          <h2 class="contacto__title">Contacto</h2>
+          <p class="contacto__text"> Puedes contactarme por mis distintas redes sociales de la barra lateral izquierda, pero si por alguna razón quieres dejarme un Email, a mi correo personal aca lo puedes hacer. Aunque recalco, que este contacto es mas importante, por ende no contestare a menos que sea de importancia.</p>
+          
+        </section>
+    
+      <footer class="footer">
+        
+      </footer>
+      </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
